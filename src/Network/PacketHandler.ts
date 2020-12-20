@@ -12,11 +12,11 @@ export default class PacketHandler{
     getPacket(_packet: string): Packet | null{
         let packet: Packet | null = null;
         this.packets.forEach((_p) => {
-            if(_p.cmd == _packet.substr(0,3))
+            if(_p.cmd === _packet.substr(0,3))
                 packet = _p;
-            if(_p.cmd == _packet.substr(0,2))
+            if(_p.cmd === _packet.substr(0,2))
                 packet = _p;
-            if(_p.cmd == _packet.substr(0,1))
+            if(_p.cmd === _packet.substr(0,1))
                 packet = _p;
         })
         return packet;

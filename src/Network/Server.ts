@@ -5,12 +5,10 @@ export default class Server{
 
     server: Net.Server
 
-    clients: Client[] = []
-
     constructor(){
         this.server = new Net.Server()
         this.server.on("connection", (socket: Net.Socket) => {
-            let dofusClient = new Client(socket)
+            new Client(socket)
         })
     }
 
